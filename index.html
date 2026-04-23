@@ -40,6 +40,7 @@
       background: var(--bg);
       padding: 0.95in 0.8in 0.8in;
       box-shadow: var(--shadow);
+      outline: 4px solid red;
     }
 
     .topbar {
@@ -179,7 +180,7 @@
 
     .stages {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.1in;
       margin-top: 0.14in;
     }
@@ -199,7 +200,7 @@
     }
 
     .stage-desc {
-      font-size: 12pt;
+      font-size: 24pt;
       line-height: 1.35;
       color: var(--muted);
     }
@@ -289,6 +290,23 @@
       letter-spacing: -0.01em;
     }
 
+
+    .references p,
+    .references li {
+      font-size: 16pt;
+      line-height: 1.3;
+      margin: 0 0 0.08in;
+    }
+
+    .references-list {
+      margin: 0.08in 0 0;
+      padding-left: 0.22in;
+    }
+
+    .references-list li {
+      margin-bottom: 0.08in;
+    }
+
   </style>
 </head>
 <body>
@@ -310,7 +328,7 @@
         <article class="panel">
           <h2>Motivation</h2>
           <p>
-            The increasing integration of artificial intelligence (AI) into educational contexts has raised concerns about diminished higher-order cognitive engagement, particularly critical thinking. Prior research demonstrates that when learners offload cognitive processes to information technologies, their independent capacities may decline; emerging work on AI-assisted learning suggests similar risks (___).
+            The increasing integration of artificial intelligence (AI) into educational contexts has raised concerns about diminished higher-order cognitive engagement, particularly critical thinking. Prior research demonstrates that when learners offload cognitive processes to information technologies, their independent capacities may decline; emerging work on AI-assisted learning suggests similar risks (Gerlich, 2025; Georgiou, 2025).
           </p>
           <p>
             This project investigates the relationship between AI usage and critical thinking by (i) surveying existing literature and (ii) designing a targeted intervention for an academic setting.
@@ -335,55 +353,56 @@
         <article class="panel">
           <h2>Background</h2>
           <p>
-            Our approach adopts the Human-in-the-Loop (HITL) model of critical thinking, which holds that the underlying cognitive processes remain constant with or without technological mediation (___). On this view, large language models (LLMs) can only augment—rather than replace—discrete stages within the critical thinking process. The HITL framework further enables these stages to be operationalized into four components: triggering, exploration, integration, and resolution.
+            Our approach adopts the Human-in-the-Loop (HITL) model of critical thinking, which holds that the underlying cognitive processes remain constant with or without technological mediation (Nasr et al., 2025). On this view, large language models (LLMs) can only augment—rather than replace—discrete stages within the critical thinking process. The HITL framework further enables these stages to be operationalized into four components: triggering, exploration, integration, and resolution.
           </p>
           <div class="stages">
             <div class="stage">
               <div class="stage-title">Triggering</div>
-              <div class="stage-desc">Identifying tensions, questions, or inconsistencies that demand reflection.</div>
+              <div class="stage-desc">Tensions or ambiguities are made conscious, motivating reconsideration.</div>
             </div>
             <div class="stage">
               <div class="stage-title">Exploration</div>
-              <div class="stage-desc">Considering possible frames, concepts, and lines of inquiry.</div>
+              <div class="stage-desc">Divergent thinking generates plausible solutions to the dissonance.</div>
             </div>
             <div class="stage">
               <div class="stage-title">Integration</div>
-              <div class="stage-desc">Weighing evidence and synthesizing competing considerations.</div>
+              <div class="stage-desc">The solution-space prompts analytical reasoning to compare and evaluate possibilities in context of the initial problem.</div>
             </div>
             <div class="stage">
               <div class="stage-title">Resolution</div>
-              <div class="stage-desc">Arriving at a considered judgment or response.</div>
+              <div class="stage-desc">The new understanding needs to be applied to the initial problem and to update related schema along the way.
+              </div>
             </div>
           </div>
+        </article>
+
+        <article class="panel">
+          <h2>Approach</h2>
           <p>
-            Given that AI assistance necessarily redistributes cognitive load, the central design question concerns which stages to support and to what extent. Our intervention selectively targets the triggering and exploration phases, while preserving student autonomy in integration and resolution.
+            Given that AI assistance necessarily redistributes cognitive load, the central design question concerns which stages to support and to what extent. Our intervention selectively targets the triggering and exploration phases, while preserving student autonomy in integration and resolution for the reasons outlined here.
           </p>
           <p>
             This design is motivated by two considerations. First, errors in reasoning are often opaque to the individual who produces them; LLM-guided prompting during the triggering phase may therefore increase opportunities for self-reflection by surfacing overlooked assumptions or inconsistencies. Second, the exploration phase frequently depends on familiarity with a range of theoretical frameworks, which students may not yet possess. Carefully structured AI assistance can broaden awareness of relevant perspectives without supplanting interpretive judgment.
           </p>
           <p>
-            By contrast, the integration and resolution stages are pedagogically valuable precisely insofar as they require independent evaluation and synthesis. Moreover, current AI systems exhibit limitations in domains requiring sustained normative and interpretive reasoning (___). Accordingly, these later stages are intentionally left to the student.
-          </p>
-          <p>
-            A high-level overview of the intervention is provided below.
+            By contrast, the integration and resolution stages are pedagogically valuable precisely insofar as they require independent evaluation and synthesis. Accordingly, these later stages are intentionally left to the student.
           </p>
         </article>
       </div>
 
       <div class="column">
         <article class="panel">
-          <h2>Developmental Process</h2>
+          <h2>Faculty Input</h2>
           <p>
-            We solicited guidance from MIT faculty to learn about their hopes and concerns for a project like ours. During those meetings, a consistent source of curiosity was how any AI intervention could be deployed in the context of existing curricula, rather than demanding its own assignment or additional structure.
-          </p>
-          <p>
-            With this in mind, we thought a
+            We solicited guidance from MIT faculty to learn about their hopes and concerns for AI in the humanities classroom. During those meetings, a consistent source of curiosity was how future AI interventions could be deployed in the context of existing curricula. There are fears that bending too much to the technology risks creating a very artificial education and ultimately effaces the role of AI in serving students rather than the other way around.
           </p>
           <p>
             The faculty also cited concerns about course relevance in LLM interactions, motivating a design that would directly integrate course content (i.e. syllabus, assignment, relevant documents including the students' work) as a guard-rail.
           </p>
+          <p>
+            Together, these conversations outlined three goals in the development of our model.
+          </p>
           <ul class="process-list">
-            <li>Consult faculty about pedagogical fit, course constraints, and potential value.</li>
             <li>Identify where AI assistance may prompt reflection without replacing student judgment.</li>
             <li>Constrain model interaction through course-specific materials and assignment context.</li>
             <li>Preserve later-stage reasoning as the student's own evaluative and synthetic work.</li>
@@ -494,18 +513,20 @@
           </div>
         </article>
 
-        <article class="panel">
+        <article class="panel references">
           <h2>References</h2>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
+          <ol class="references-list">
+            <li>Gerlich, M. (2025). <em>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</em>. <em>Societies, 15</em>(1), 6. https://doi.org/10.3390/soc15010006</li>
+            <li>Georgiou, G. P. (2025). <em>ChatGPT produces more “lazy” thinkers: Evidence of cognitive engagement decline</em>. <em>arXiv</em>. https://doi.org/10.48550/arXiv.2507.00181</li>
+            <li>Nasr, N. R., Tu, C.-H., Werner, J., Bauer, T., Yen, C.-J., &amp; Sujo-Montes, L. (2025). <em>Exploring the impact of generative AI ChatGPT on critical thinking in higher education: Passive AI-directed use or human–AI supported collaboration?</em> <em>Education Sciences, 15</em>(9), 1198. https://doi.org/10.3390/educsci15091198</li>
+          </ol>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      <div>Replace placeholder citations, quotes, and figures as materials are finalized.</div>
-      <div>Built as flexible HTML for later text expansion and print export.</div>
+      <div>Social and Ethical Responsibilities of Computing</div>
+      <div>SERC Synergy Group 2026</div>
     </footer>
   </main>
 </body>

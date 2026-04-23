@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI and Critical Thinking Poster</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #fffdfa;
+      --ink: #1f2937;
+      --muted: #5e6875;
+      --accent: #1f4e79;
+      --accent-soft: #dce7f2;
+      --line: #d5dde6;
+      --quote-bg: #eef4fb;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #d6dbe2;
+      color: var(--ink);
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .poster {
+      width: 36in;
+      min-height: 48in;
+      background: var(--bg);
+      padding: 0.95in 0.8in 0.8in;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 2.3fr 1fr;
+      gap: 0.35in;
+      align-items: end;
+      margin-bottom: 0.35in;
+      padding-bottom: 0.22in;
+      border-bottom: 5px solid var(--accent);
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 42pt;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+    }
+
+    .title .subtitle {
+      margin-top: 0.12in;
+      font-size: 18pt;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 92%;
+    }
+
+    .meta {
+      text-align: right;
+      font-size: 14.5pt;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .intro-band {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 0.28in;
+      margin-bottom: 0.34in;
+    }
+
+    .intro-card,
+    .hero-quote {
+      background: var(--panel);
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      padding: 0.24in 0.26in;
+    }
+
+    .intro-card p,
+    .hero-quote p {
+      margin: 0;
+      font-size: 17pt;
+      line-height: 1.45;
+    }
+
+    .hero-quote {
+      background: linear-gradient(180deg, var(--quote-bg), #f9fbfe);
+      border-left: 8px solid var(--accent);
+    }
+
+    .hero-quote .label {
+      margin-bottom: 0.08in;
+      font-size: 11.5pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.28in;
+      align-items: start;
+    }
+
+    .column {
+      display: grid;
+      gap: 0.24in;
+      align-content: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1.5px solid var(--line);
+      border-radius: 24px;
+      padding: 0.25in 0.27in 0.23in;
+      break-inside: avoid;
+    }
+
+    .panel h2 {
+      margin: 0 0 0.14in;
+      padding-bottom: 0.07in;
+      font-size: 24pt;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-soft);
+    }
+
+    .panel p {
+      margin: 0 0 0.12in;
+      font-size: 16.5pt;
+      line-height: 1.5;
+    }
+
+    .panel p:last-child { margin-bottom: 0; }
+
+    .graphic-slot {
+      min-height: 3.1in;
+      border: 2px dashed #b5c3d2;
+      border-radius: 18px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0.2in;
+    }
+
+    .graphic-slot strong {
+      display: block;
+      font-size: 18pt;
+      color: var(--accent);
+      margin-bottom: 0.08in;
+    }
+
+    .graphic-slot span {
+      max-width: 86%;
+      font-size: 14pt;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .stages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.1in;
+      margin-top: 0.14in;
+    }
+
+    .stage {
+      border: 1.5px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 0.12in;
+    }
+
+    .stage-title {
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.04in;
+    }
+
+    .stage-desc {
+      font-size: 12pt;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .quote-stack {
+      display: grid;
+      gap: 0.16in;
+    }
+
+    .quote-card {
+      background: var(--quote-bg);
+      border-left: 8px solid var(--accent);
+      border-radius: 18px;
+      padding: 0.18in 0.2in;
+    }
+
+    .quote-card p {
+      margin: 0;
+      font-size: 17pt;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .quote-card .attribution {
+      margin-top: 0.08in;
+      font-size: 13pt;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .process-list {
+      margin: 0.08in 0 0;
+      padding-left: 0.18in;
+    }
+
+    .process-list li {
+      margin-bottom: 0.1in;
+      font-size: 16pt;
+      line-height: 1.45;
+    }
+
+    .small-note {
+      margin-top: 0.14in;
+      font-size: 13pt;
+      color: var(--muted);
+    }
+
+    .technical-placeholder {
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+    }
+
+    .footer {
+      margin-top: 0.32in;
+      padding-top: 0.16in;
+      border-top: 2px solid var(--accent-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.2in;
+      font-size: 12.5pt;
+      color: var(--muted);
+    }
+
+    @media print {
+      @page {
+        size: 36in 48in;
+        margin: 0;
+      }
+
+      html, body {
+        background: white;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .poster {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <section class="topbar">
+      <div class="title">
+        <h1>AI, Critical Thinking, and a Human-in-the-Loop Intervention</h1>
+        <div class="subtitle">
+          An in-progress project on how structured AI assistance might support learning without displacing higher-order reasoning.
+        </div>
+      </div>
+      <div class="meta">
+        <div><strong>Poster Format:</strong> 36" × 48" portrait</div>
+        <div><strong>Layout:</strong> two-column, print-first HTML</div>
+        <div><strong>Status:</strong> in progress</div>
+      </div>
+    </section>
+
+    <section class="columns">
+      <div class="column">
+        <article class="panel">
+          <h2>Motivation</h2>
+          <p>
+            The increasing integration of artificial intelligence (AI) into educational contexts has raised concerns about diminished higher-order cognitive engagement, particularly critical thinking. Prior research demonstrates that when learners offload cognitive processes to information technologies, their independent capacities may decline; emerging work on AI-assisted learning suggests similar risks (___).
+          </p>
+          <p>
+            This project investigates the relationship between AI usage and critical thinking by (i) surveying existing literature and (ii) designing a targeted intervention for an academic setting.
+          </p>
+        </article>
+
+        <article class="panel">
+          <div class="hero-quote">
+            <div class="label">Faculty perspective</div>
+            <p>“”</p>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="graphic-slot">
+            <strong>Graphic Placeholder</strong>
+            <span>Insert overview graphic, conceptual diagram, or project workflow figure here.</span>
+          </div>
+          <div class="small-note">Suggested use: a visual overview of the intervention or a simple process map.</div>
+        </article>
+
+        <article class="panel">
+          <h2>Background</h2>
+          <p>
+            Our approach adopts the Human-in-the-Loop (HITL) model of critical thinking, which holds that the underlying cognitive processes remain constant with or without technological mediation (___). On this view, large language models (LLMs) can only augment—rather than replace—discrete stages within the critical thinking process. The HITL framework further enables these stages to be operationalized into four components: triggering, exploration, integration, and resolution.
+          </p>
+          <div class="stages">
+            <div class="stage">
+              <div class="stage-title">Triggering</div>
+              <div class="stage-desc">Identifying tensions, questions, or inconsistencies that demand reflection.</div>
+            </div>
+            <div class="stage">
+              <div class="stage-title">Exploration</div>
+              <div class="stage-desc">Considering possible frames, concepts, and lines of inquiry.</div>
+            </div>
+            <div class="stage">
+              <div class="stage-title">Integration</div>
+              <div class="stage-desc">Weighing evidence and synthesizing competing considerations.</div>
+            </div>
+            <div class="stage">
+              <div class="stage-title">Resolution</div>
+              <div class="stage-desc">Arriving at a considered judgment or response.</div>
+            </div>
+          </div>
+          <p>
+            Given that AI assistance necessarily redistributes cognitive load, the central design question concerns which stages to support and to what extent. Our intervention selectively targets the triggering and exploration phases, while preserving student autonomy in integration and resolution.
+          </p>
+          <p>
+            This design is motivated by two considerations. First, errors in reasoning are often opaque to the individual who produces them; LLM-guided prompting during the triggering phase may therefore increase opportunities for self-reflection by surfacing overlooked assumptions or inconsistencies. Second, the exploration phase frequently depends on familiarity with a range of theoretical frameworks, which students may not yet possess. Carefully structured AI assistance can broaden awareness of relevant perspectives without supplanting interpretive judgment.
+          </p>
+          <p>
+            By contrast, the integration and resolution stages are pedagogically valuable precisely insofar as they require independent evaluation and synthesis. Moreover, current AI systems exhibit limitations in domains requiring sustained normative and interpretive reasoning (___). Accordingly, these later stages are intentionally left to the student.
+          </p>
+          <p>
+            A high-level overview of the intervention is provided below.
+          </p>
+        </article>
+      </div>
+
+      <div class="column">
+        <article class="panel">
+          <h2>Developmental Process</h2>
+          <p>
+            We solicited guidance from MIT faculty to learn about their hopes and concerns for a project like ours. During those meetings, a consistent source of curiosity was how any AI intervention could be deployed in the context of existing curricula, rather than demanding its own assignment or additional structure.
+          </p>
+          <p>
+            With this in mind, we thought a
+          </p>
+          <p>
+            The faculty also cited concerns about course relevance in LLM interactions, motivating a design that would directly integrate course content (i.e. syllabus, assignment, relevant documents including the students' work) as a guard-rail.
+          </p>
+          <ul class="process-list">
+            <li>Consult faculty about pedagogical fit, course constraints, and potential value.</li>
+            <li>Identify where AI assistance may prompt reflection without replacing student judgment.</li>
+            <li>Constrain model interaction through course-specific materials and assignment context.</li>
+            <li>Preserve later-stage reasoning as the student's own evaluative and synthetic work.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Highlighted Faculty Remarks</h2>
+          <div class="quote-stack">
+            <div class="quote-card">
+              <p>“”</p>
+              <div class="attribution">Faculty meeting placeholder</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel technical-placeholder">
+          <h2>Technical Development</h2>
+          <p><strong>To be completed.</strong></p>
+          <p>
+            This section is intentionally left open for later additions. The current layout preserves substantial vertical space so the poster can absorb more technical detail without requiring a full redesign.
+          </p>
+          <p>
+            Possible future content could include system architecture, prompt flow, content-ingestion pipeline, interface sketches, safety constraints, or pilot deployment plans.
+          </p>
+        </article>
+
+        <article class="panel">
+          <div class="graphic-slot">
+            <strong>Graphic Placeholder</strong>
+            <span>Insert faculty feedback summary, course-integration diagram, or system context illustration here.</span>
+          </div>
+          <div class="small-note">Suggested use: show how syllabus, assignment materials, and student work guide the interaction.</div>
+        </article>
+
+        <article class="panel">
+          <h2>References</h2>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Replace placeholder citations, quotes, and figures as materials are finalized.</div>
+      <div>Built as flexible HTML for later text expansion and print export.</div>
+    </footer>
+  </main>
+</body>
+</html>

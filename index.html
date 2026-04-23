@@ -31,6 +31,7 @@
       display: flex;
       justify-content: center;
       padding: 24px;
+      font-size: 30pt;
     }
 
     .poster {
@@ -43,17 +44,17 @@
 
     .topbar {
       display: grid;
-      grid-template-columns: 2.3fr 1fr;
-      gap: 0.35in;
-      align-items: end;
+      grid-template-columns: 1fr;
+      gap: 0.2in;
       margin-bottom: 0.35in;
       padding-bottom: 0.22in;
       border-bottom: 5px solid var(--accent);
     }
 
     .title h1 {
+      grid-column: 1 / -1;
       margin: 0;
-      font-size: 42pt;
+      font-size: 84pt;
       line-height: 1.05;
       letter-spacing: -0.03em;
       color: var(--accent);
@@ -61,14 +62,14 @@
 
     .title .subtitle {
       margin-top: 0.12in;
-      font-size: 18pt;
+      font-size: 24pt;
       line-height: 1.35;
       color: var(--muted);
       max-width: 92%;
     }
 
     .meta {
-      text-align: right;
+      text-align: left;
       font-size: 14.5pt;
       line-height: 1.45;
       color: var(--muted);
@@ -103,7 +104,7 @@
 
     .hero-quote .label {
       margin-bottom: 0.08in;
-      font-size: 11.5pt;
+      font-size: 24pt;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -134,7 +135,7 @@
     .panel h2 {
       margin: 0 0 0.14in;
       padding-bottom: 0.07in;
-      font-size: 24pt;
+      font-size: 30pt;
       line-height: 1.1;
       letter-spacing: -0.01em;
       color: var(--accent);
@@ -143,7 +144,7 @@
 
     .panel p {
       margin: 0 0 0.12in;
-      font-size: 16.5pt;
+      font-size: 30pt;
       line-height: 1.5;
     }
 
@@ -191,7 +192,7 @@
     }
 
     .stage-title {
-      font-size: 13.5pt;
+      font-size: 24pt;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 0.04in;
@@ -236,7 +237,7 @@
 
     .process-list li {
       margin-bottom: 0.1in;
-      font-size: 16pt;
+      font-size: 30pt;
       line-height: 1.45;
     }
 
@@ -279,21 +280,28 @@
         box-shadow: none;
       }
     }
+
+    .faculty-perspective .faculty-text {
+      font-size: 48pt;
+      line-height: 1.25;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
   </style>
 </head>
 <body>
   <main class="poster">
     <section class="topbar">
       <div class="title">
-        <h1>AI, Critical Thinking, and a Human-in-the-Loop Intervention</h1>
+        <h1>AI and Critical Thinking: A Human-Centered Intervention to Align Technology with Learning</h1>
         <div class="subtitle">
-          An in-progress project on how structured AI assistance might support learning without displacing higher-order reasoning.
+          A first step into how structured AI assistance might support — not displace — reasoning and perspective.
+          By Karen Nakamura and Johnnie Jones VI
         </div>
       </div>
       <div class="meta">
-        <div><strong>Poster Format:</strong> 36" × 48" portrait</div>
-        <div><strong>Layout:</strong> two-column, print-first HTML</div>
-        <div><strong>Status:</strong> in progress</div>
       </div>
     </section>
 
@@ -310,18 +318,18 @@
         </article>
 
         <article class="panel">
-          <div class="hero-quote">
+          <div class="hero-quote faculty-perspective">
             <div class="label">Faculty perspective</div>
-            <p>“”</p>
+            <p class="faculty-text">“How do we change the paradigm of how students use AI? Instead of watching the technology discourage learning, what if we adapted the technology to serve students and educators?"</p>
           </div>
         </article>
 
         <article class="panel">
           <div class="graphic-slot">
-            <strong>Graphic Placeholder</strong>
-            <span>Insert overview graphic, conceptual diagram, or project workflow figure here.</span>
+            <img src="HITL_Model.png" alt="Graphic placeholder"
+                 style="width:100%; height:auto; border-radius:12px;">
           </div>
-          <div class="small-note">Suggested use: a visual overview of the intervention or a simple process map.</div>
+          <div class="small-note">Graphic placeholder</div>
         </article>
 
         <article class="panel">
@@ -383,12 +391,11 @@
         </article>
 
         <article class="panel">
-          <h2>Highlighted Faculty Remarks</h2>
-          <div class="quote-stack">
-            <div class="quote-card">
-              <p>“”</p>
-              <div class="attribution">Faculty meeting placeholder</div>
-            </div>
+          <div class="hero-quote faculty-perspective">
+            <div class="label">Faculty perspective</div>
+            <p class="faculty-text">
+              “How can AI be used to widen perspectives on complex, highly-charged issues?”
+            </p>
           </div>
         </article>
 
@@ -403,12 +410,88 @@
           </p>
         </article>
 
+        <img src="Example_Feedback1.png" alt="Feedback diagram"
+        style="width:100%; height:auto; margin-bottom:0.12in;">
+
         <article class="panel">
-          <div class="graphic-slot">
-            <strong>Graphic Placeholder</strong>
-            <span>Insert faculty feedback summary, course-integration diagram, or system context illustration here.</span>
+          <div style="transform: scale(0.9); transform-origin: top left; width: 111%;">
+
+            <!-- BEGIN INSERTED DIAGRAM -->
+            <div style="font-family: Arial, sans-serif; background:#f3f3f3; padding:20px; border-radius:12px;">
+
+              <h1 style="text-align:center; font-size:42px; color:#1f4f82; margin-bottom:20px;">
+                Essay Feedback AI Prompt
+              </h1>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+
+                <!-- LEFT -->
+                <div>
+                  <div style="background:#255a8f; color:white; padding:20px; border-radius:20px; text-align:center; font-weight:bold;">
+                    Paragraph-Level Claim Analysis
+                  </div>
+
+                  <div style="margin-top:10px;">
+                    <div style="background:#56a7d8; padding:10px; text-align:center;">What it does</div>
+                    <div style="background:#dbeaf5; padding:10px;">
+                      <ul>
+                        <li>Identifies 1–3 key claims</li>
+                        <li>Evaluates support within the paragraph</li>
+                        <li>Adapts to intro, body, or conclusion</li>
+                        <li>Uses local evidence and reasoning</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div style="margin-top:10px;">
+                    <div style="background:#56a7d8; padding:10px; text-align:center;">What it doesn't do</div>
+                    <div style="background:#dbeaf5; padding:10px;">
+                      <ul>
+                        <li>Does not assume full essay context</li>
+                        <li>Does not select every sentence</li>
+                        <li>Does not over-penalize introductions</li>
+                        <li>Does not fact-check claims</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div>
+                  <div style="background:#56408f; color:white; padding:20px; border-radius:20px; text-align:center; font-weight:bold;">
+                    Socratic Feedback Chat
+                  </div>
+
+                  <div style="margin-top:10px;">
+                    <div style="background:#b49ae8; padding:10px; text-align:center;">What it does</div>
+                    <div style="background:#eee8f7; padding:10px;">
+                      <ul>
+                        <li>Asks 1–2 focused questions</li>
+                        <li>Stays on one specific claim</li>
+                        <li>Uses course and assignment framing</li>
+                        <li>Helps the student think for themself</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div style="margin-top:10px;">
+                    <div style="background:#b49ae8; padding:10px; text-align:center;">What it doesn't do</div>
+                    <div style="background:#eee8f7; padding:10px;">
+                      <ul>
+                        <li>Does not give direct answers</li>
+                        <li>Does not write evidence for the student</li>
+                        <li>Does not drift beyond the selected claim</li>
+                        <li>Does not turn into a lecture</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- END INSERTED DIAGRAM -->
+
           </div>
-          <div class="small-note">Suggested use: show how syllabus, assignment materials, and student work guide the interaction.</div>
         </article>
 
         <article class="panel">

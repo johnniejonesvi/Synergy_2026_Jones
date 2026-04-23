@@ -418,21 +418,40 @@
         </article>
 
         <article class="panel technical-placeholder">
-          <h2>Technical Development</h2>
-          <p><strong>To be completed.</strong></p>
+        <h2>Technical Development</h2>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.18in; align-items:start;">
+
+          <div>
+            <p>
+              The SoraticTutor uses GPT-4o to analyze student assignments in the context of course-specific objectives extracted from the class syllabus and assignment instructions. After parsing these materials, the system processes each essay paragraph to identify and evaluate individual claims, labeling them as supported, unsupported, or uncertain. 
+            </p>
+          </div>
+
+          <div style="background:#ffffff; padding:0.12in; ">
+            <img src="Essay_Feedback_AI_Prompt.png" 
+                alt="Essay Feedback AI Prompt"
+                style="width:100%; height:auto; object-fit:contain; border-radius:10px;">
+          </div>
+
+        </div>
+        <p>For each claim, it generates an explanation and targeted suggestions for improvement. Students can also engage in a “chat about this claim” feature, which provides Socratic-style feedback to help them strengthen their arguments through guided questioning.</p>
+
+        <!-- SECOND ROW: future steps full width -->
+        <div style="margin-top:0.18in; padding-top:0.14in; border-top:1.5px solid var(--accent-soft);">
           <p>
-            This section is intentionally left open for later additions. The current layout preserves substantial vertical space so the poster can absorb more technical detail without requiring a full redesign.
+            Future steps include allowing professors to directly define and refine course objectives so system aligns feedback with instructor intent. Additional improvements could include customizable grading rubrics, versioned assignment tracking to show revision progress, explainable feedback summaries for instructors, and safeguards to ensure consistency and fairness across evaluations.
           </p>
-          <p>
-            Possible future content could include system architecture, prompt flow, content-ingestion pipeline, interface sketches, safety constraints, or pilot deployment plans.
-          </p>
-        </article>
+        </div>
+      </article>
 
         <img src="Example_Feedback1.png" alt="Feedback diagram"
         style="width:100%; height:auto; margin-bottom:0.12in;">
 
-        <img src="Essay_Feedback_AI_Prompt.png" alt="Feedback diagram"
-        style="width:100%; height:auto; margin-bottom:0.12in;">
+        <div style="background:#ffffff; padding:0.18in; border-radius:16px; border:1.5px solid var(--line); margin-bottom:0.16in;">
+          <img src="example_dialogue.png" alt="Example dialogue"
+              style="width:100%; height:auto; border-radius:10px;">
+        </div>
 
         <article class="panel references">
           <h2>References</h2>
